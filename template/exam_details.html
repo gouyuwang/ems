@@ -500,7 +500,10 @@
            tr +='<tr>'+ td +'</tr>'; 
            td = '';
         }
-    } 
+    }  
+    if (i%10 !== 0){
+           tr +='<tr>'+ td +'</tr>'; 
+    }
     document.getElementById('train-table-pointer').innerHTML = tr;
 </script>　
 
@@ -533,7 +536,7 @@
 
    /* timer*/
     $(function () {
-        countDown("2017/4/25 17:30:00", "#colockbox .day", "#colockbox .hour", "#colockbox .minute", "#colockbox .second");
+        countDown("2017/4/26 17:30:00", "#colockbox .day", "#colockbox .hour", "#colockbox .minute", "#colockbox .second");
     });
 
     function countDown(time, day_elem, hour_elem, minute_elem, second_elem) {
@@ -553,7 +556,8 @@
             } else {
                 /* 时间到提交试卷 */
                 if (!isSubmit){
-                    exam_form.submit();
+                    layer.msg('提交试卷');
+                    isSubmit = true;
                 }
                 clearInterval(timer);
             }
@@ -561,11 +565,12 @@
     }
 
     /* 回到顶部 */
-    function SuCaiJiaYuan(){
+    function RightFixedBar(){
         this.init();
     }
-    SuCaiJiaYuan.prototype={
-        constructor:SuCaiJiaYuan,
+
+    RightFixedBar.prototype={
+        constructor:RightFixedBar,
         init:function(){        
             this._initBackTop();
         },  
@@ -595,7 +600,7 @@
         }
         
     }
-    var SuCaiJiaYuan = new SuCaiJiaYuan();
+    new RightFixedBar();
 </script>
 </body>
 </html>
