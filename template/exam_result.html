@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>考试系统</title>
+    <meta name="keywords" content="考试系统">
+    <meta name="description" content="考试系统">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- load layui framework -->
+    <link href="./css/global.css" type="text/css" rel="stylesheet"/>
+    <link href="./layui/css/layui.css" type="text/css" rel="stylesheet"/>
+    <script src="./layui/layui.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="header">
+    <div class="main">
+        <a class="logo" href="/" title="在线考试系统">
+            <i class="layui-icon" style="font-size: 40px;">&#xe609;</i> 在线考试系统
+        </a>
+        <div class="nav-user">
+            <span>
+                <a href="javascript:;"><i class="layui-icon">&#xe612;</i> 考生:
+                    <em style="color: #5FB878; list-style: none">0xdssesdee</em></a>
+                <a href="index.html">退出</a>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="body" style="margin-top: 80px;    width: 1075px;">
+    <div class="search-result">
+        <p class="result-count">您的考试结果如下：</p>
+        <!--<p class="result-count">未找到您的考试信息</p>-->
+        <table class="layui-table result-list">
+            <colgroup>
+                <col width="120">
+                <col width="180">
+                <col width="180">
+                <col width="80">
+                <col width="80">
+                <col width="120">
+                <col>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>科目识别码</th>
+                    <th>科目名称</th>
+                    <th>考试时间</th>
+                    <th>用时</th>
+                    <th>分数</th>
+                    <th>结果</th>
+                    <th>备注</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>MTI0MDYxMDIyNg==</td>
+                        <td>《中国历史概论》</td>
+                        <td>2016-11-29 00:00:00</td>
+                        <td>80分钟</td>
+                        <td>120/150</td>
+                        <td style="color: #1E9FFF;">通过</td>
+                        <td>人生就像是一场修行</td>
+                    </tr>
+                    <tr>
+                        <td>MTI0MDYxMDIyNg==</td>
+                        <td>《中国历史概论》</td>
+                        <td>2016-11-29 00:00:00</td>
+                        <td>80分钟</td>
+                        <td>120/150</td>
+                        <td style="color: #FF5722;">未通过</td>
+                        <td>人生就像是一场修行</td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
