@@ -19,11 +19,11 @@
     <script src="./layui/layui.js" type="text/javascript"></script>
     <style>
         .exam_details {
-            margin-top: 80px;
+           /* margin-top: 80px;*/
         }
 
         @media screen and (min-width: 1200px) {
-            . .exam_details .exam-container {
+            . .exam_details .exam-contrainer {
                 width: 1170px;
                 border: 1px solid black;
             }
@@ -49,7 +49,7 @@
         }
 
         .exam_details .exam-main .exam-main-left {
-            border: 1px solid red; 
+            border: 1px solid #E9EAE9; 
         }
 
         .exam_details .exam-main .exam-main-right {
@@ -114,12 +114,31 @@
         }
 
         /* 题号列表 */
-        .exam-tain-table td {
-            text-align: center;
+        .train-table-pointer td { 
             line-height: 17px;
             height: 17px;
             cursor: pointer;
+            padding: 5px 5px;
+            text-align: center;
+            cursor: pointer; 
         }
+        .train-table-pointer td:hover {
+            background-color: #5FB878;
+            color:#fff;  　   
+        } 
+
+        .exam-panel .train-options{
+           margin-left: 18px;
+           min-height: 18px;
+        }
+        .exam-panel .train-desc{
+            margin-left: 18px;
+            border-left: 2px solid #5FB878;
+        } 
+        .layui-form-checkbox[lay-skin=primary] span { 
+            line-height: 26px; 
+        }
+
     </style>
 </head>
 <body>
@@ -139,20 +158,399 @@
 </div>
 <div class="body">
     <div class="exam_details">
-        <form class="layui-form" action="">
-            <div class="exam-container">
+        <form class="layui-form" action="" id="exam_form" method="post">
+            <div class="exam-contrainer">
                 <div class="exam-main">
                     <div class="exam-main-left">
-						<div class="exam-panel">
-							  <ol class="exam-train-list">
-								<li>
-								  <p class="result-title"> 这里显示题目的描述</p>
-								  <p class="result-path" title="/2017.1.10春2波/春二波 上衣吊牌/0004-合格证.jpg">路径：/2017.1.10春2波/春二波 上衣吊牌/0004-合格证.jpg</p>
-								  <p class="result-info"><span>来源：baiduyun</span> <span>分享：2017-01-03 09:50:53</span> <span>发现：2017-04-24 22:20:55</span> <span>格式： jpg </span> <span>大小：146Kb</span></p>
-								</li> 
-							 </ol>
+						<div class="exam-panel" id="wrapper"> 
+                        　  <fieldset class="layui-elem-field exam-train"> 
+                                  <div class="layui-field-box train-title">
+                                    <span>1、</span>题目内容 
+                                  </div>
+                                  <div class="layui-field-box train-options layui-input-block">
+                                     
+                                          <input type="radio" name="sex" value="男" title="男">
+                                          <div class="layui-unselect layui-form-radio">
+                                            <i class="layui-anim layui-icon"></i>
+                                            <span>男</span>
+                                          </div>
+
+                                          <input type="radio" name="sex" value="女" title="女">
+                                          <div class="layui-unselect layui-form-radio">
+                                            <i class="layui-anim layui-icon"></i>
+                                            <span>女</span>
+                                          </div>
+                                
+                                  </div>
+                                 <blockquote class="layui-elem-quote train-desc layui-word-aux">
+                                    <p>正确答案: A </p> 
+                                    <p>解析: 这里全是试题的解析</p>
+                                 </blockquote>
+                            </fieldset>  
+
+                             <fieldset class="layui-elem-field exam-train"> 
+                                  <div class="layui-field-box train-title">
+                                    <span>2、</span>题目内容
+                                  </div>
+                                  <div class="layui-field-box train-options layui-input-block">  
+                                     
+                                      <input type="checkbox" name="like1[write]" lay-skin="primary" title="选项" >
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <i class="layui-anim layui-icon"></i>
+                                        <span>选项</span>
+                                      </div>
+
+
+                                      <input type="checkbox" name="like1[read]" lay-skin="primary" title="阅读">
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                            <i class="layui-anim layui-icon"></i>
+                                            <span>阅读</span>
+                                       </div> 
+                                  </div>
+                                  <blockquote class="layui-elem-quote train-desc layui-word-aux">
+                                    <p>正确答案: A </p> 
+                                    <p>解析: 这里全是试题的解析</p>
+                                  </blockquote>
+                             </fieldset>
+
+                             <fieldset class="layui-elem-field exam-train"> 
+                                  <div class="layui-field-box train-title">
+                                    <span>2、</span>题目内容
+                                  </div>
+                                  <div class="layui-field-box train-options layui-input-block">  
+                                     
+                                      <input type="checkbox" name="like1[write]" lay-skin="primary" title="选项" >
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <i class="layui-anim layui-icon"></i>
+                                        <span>选项</span>
+                                      </div>
+
+
+                                      <input type="checkbox" name="like1[read]" lay-skin="primary" title="阅读">
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                            <i class="layui-anim layui-icon"></i>
+                                            <span>阅读</span>
+                                       </div> 
+                                  </div>
+                                  <blockquote class="layui-elem-quote train-desc layui-word-aux">
+                                    <p>正确答案: A </p> 
+                                    <p>解析: 这里全是试题的解析</p>
+                                  </blockquote>
+                             </fieldset>
+
+
+                             <fieldset class="layui-elem-field exam-train"> 
+                                  <div class="layui-field-box train-title">
+                                    <span>2、</span>题目内容
+                                  </div>
+                                  <div class="layui-field-box train-options layui-input-block">  
+                                     
+                                      <input type="checkbox" name="like1[write]" lay-skin="primary" title="选项" >
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <i class="layui-anim layui-icon"></i>
+                                        <span>选项</span>
+                                      </div>
+
+
+                                      <input type="checkbox" name="like1[read]" lay-skin="primary" title="阅读">
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                            <i class="layui-anim layui-icon"></i>
+                                            <span>阅读</span>
+                                       </div> 
+                                  </div>
+                                  <blockquote class="layui-elem-quote train-desc layui-word-aux">
+                                    <p>正确答案: A </p> 
+                                    <p>解析: 这里全是试题的解析</p>
+                                  </blockquote>
+                             </fieldset>
+
+
+                             <fieldset class="layui-elem-field exam-train"> 
+                                  <div class="layui-field-box train-title">
+                                    <span>2、</span>题目内容
+                                  </div>
+                                  <div class="layui-field-box train-options layui-input-block">  
+                                     
+                                      <input type="checkbox" name="like1[write]" lay-skin="primary" title="选项" >
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <i class="layui-anim layui-icon"></i>
+                                        <span>选项</span>
+                                      </div>
+
+
+                                      <input type="checkbox" name="like1[read]" lay-skin="primary" title="阅读">
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                            <i class="layui-anim layui-icon"></i>
+                                            <span>阅读</span>
+                                       </div> 
+                                  </div>
+                                  <blockquote class="layui-elem-quote train-desc layui-word-aux">
+                                    <p>正确答案: A </p> 
+                                    <p>解析: 这里全是试题的解析</p>
+                                  </blockquote>
+                             </fieldset>
+
+
+                             <fieldset class="layui-elem-field exam-train"> 
+                                  <div class="layui-field-box train-title">
+                                    <span>2、</span>题目内容
+                                  </div>
+                                  <div class="layui-field-box train-options layui-input-block">  
+                                     
+                                      <input type="checkbox" name="like1[write]" lay-skin="primary" title="选项" >
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <i class="layui-anim layui-icon"></i>
+                                        <span>选项</span>
+                                      </div>
+
+
+                                      <input type="checkbox" name="like1[read]" lay-skin="primary" title="阅读">
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                            <i class="layui-anim layui-icon"></i>
+                                            <span>阅读</span>
+                                       </div> 
+                                  </div>
+                                  <blockquote class="layui-elem-quote train-desc layui-word-aux">
+                                    <p>正确答案: A </p> 
+                                    <p>解析: 这里全是试题的解析</p>
+                                  </blockquote>
+                             </fieldset>
+
+
+
+                             <fieldset class="layui-elem-field exam-train"> 
+                                  <div class="layui-field-box train-title">
+                                    <span>2、</span>题目内容
+                                  </div>
+                                  <div class="layui-field-box train-options layui-input-block">  
+                                     
+                                      <input type="checkbox" name="like1[write]" lay-skin="primary" title="选项" >
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <i class="layui-anim layui-icon"></i>
+                                        <span>选项</span>
+                                      </div>
+
+
+                                      <input type="checkbox" name="like1[read]" lay-skin="primary" title="阅读">
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                            <i class="layui-anim layui-icon"></i>
+                                            <span>阅读</span>
+                                       </div> 
+                                  </div>
+                                  <blockquote class="layui-elem-quote train-desc layui-word-aux">
+                                    <p>正确答案: A </p> 
+                                    <p>解析: 这里全是试题的解析</p>
+                                  </blockquote>
+                             </fieldset>
+
+
+                             <fieldset class="layui-elem-field exam-train"> 
+                                  <div class="layui-field-box train-title">
+                                    <span>2、</span>题目内容
+                                  </div>
+                                  <div class="layui-field-box train-options layui-input-block">  
+                                     
+                                      <input type="checkbox" name="like1[write]" lay-skin="primary" title="选项" >
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <i class="layui-anim layui-icon"></i>
+                                        <span>选项</span>
+                                      </div>
+
+
+                                      <input type="checkbox" name="like1[read]" lay-skin="primary" title="阅读">
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                            <i class="layui-anim layui-icon"></i>
+                                            <span>阅读</span>
+                                       </div> 
+                                  </div>
+                                  <blockquote class="layui-elem-quote train-desc layui-word-aux">
+                                    <p>正确答案: A </p> 
+                                    <p>解析: 这里全是试题的解析</p>
+                                  </blockquote>
+                             </fieldset>
+
+
+                             <fieldset class="layui-elem-field exam-train"> 
+                                  <div class="layui-field-box train-title">
+                                    <span>2、</span>题目内容
+                                  </div>
+                                  <div class="layui-field-box train-options layui-input-block">  
+                                     
+                                      <input type="checkbox" name="like1[write]" lay-skin="primary" title="选项" >
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <i class="layui-anim layui-icon"></i>
+                                        <span>选项</span>
+                                      </div>
+
+
+                                      <input type="checkbox" name="like1[read]" lay-skin="primary" title="阅读">
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                            <i class="layui-anim layui-icon"></i>
+                                            <span>阅读</span>
+                                       </div> 
+                                  </div>
+                                  <blockquote class="layui-elem-quote train-desc layui-word-aux">
+                                    <p>正确答案: A </p> 
+                                    <p>解析: 这里全是试题的解析</p>
+                                  </blockquote>
+                             </fieldset>
+
+
+                             <fieldset class="layui-elem-field exam-train"> 
+                                  <div class="layui-field-box train-title">
+                                    <span>2、</span>题目内容
+                                  </div>
+                                  <div class="layui-field-box train-options layui-input-block">  
+                                     
+                                      <input type="checkbox" name="like1[write]" lay-skin="primary" title="选项" >
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <i class="layui-anim layui-icon"></i>
+                                        <span>选项</span>
+                                      </div>
+
+
+                                      <input type="checkbox" name="like1[read]" lay-skin="primary" title="阅读">
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                            <i class="layui-anim layui-icon"></i>
+                                            <span>阅读</span>
+                                       </div> 
+                                  </div>
+                                  <blockquote class="layui-elem-quote train-desc layui-word-aux">
+                                    <p>正确答案: A </p> 
+                                    <p>解析: 这里全是试题的解析</p>
+                                  </blockquote>
+                             </fieldset>
+
+
+                             <fieldset class="layui-elem-field exam-train"> 
+                                  <div class="layui-field-box train-title">
+                                    <span>2、</span>题目内容
+                                  </div>
+                                  <div class="layui-field-box train-options layui-input-block">  
+                                     
+                                      <input type="checkbox" name="like1[write]" lay-skin="primary" title="选项" >
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <i class="layui-anim layui-icon"></i>
+                                        <span>选项</span>
+                                      </div>
+
+
+                                      <input type="checkbox" name="like1[read]" lay-skin="primary" title="阅读">
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                            <i class="layui-anim layui-icon"></i>
+                                            <span>阅读</span>
+                                       </div> 
+                                  </div>
+                                  <blockquote class="layui-elem-quote train-desc layui-word-aux">
+                                    <p>正确答案: A </p> 
+                                    <p>解析: 这里全是试题的解析</p>
+                                  </blockquote>
+                             </fieldset>
+
+
+                             <fieldset class="layui-elem-field exam-train"> 
+                                  <div class="layui-field-box train-title">
+                                    <span>2、</span>题目内容
+                                  </div>
+                                  <div class="layui-field-box train-options layui-input-block">  
+                                     
+                                      <input type="checkbox" name="like1[write]" lay-skin="primary" title="选项" >
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <i class="layui-anim layui-icon"></i>
+                                        <span>选项</span>
+                                      </div>
+
+
+                                      <input type="checkbox" name="like1[read]" lay-skin="primary" title="阅读">
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                            <i class="layui-anim layui-icon"></i>
+                                            <span>阅读</span>
+                                       </div> 
+                                  </div>
+                                  <blockquote class="layui-elem-quote train-desc layui-word-aux">
+                                    <p>正确答案: A </p> 
+                                    <p>解析: 这里全是试题的解析</p>
+                                  </blockquote>
+                             </fieldset>
+
+
+                             <fieldset class="layui-elem-field exam-train"> 
+                                  <div class="layui-field-box train-title">
+                                    <span>2、</span>题目内容
+                                  </div>
+                                  <div class="layui-field-box train-options layui-input-block">  
+                                     
+                                      <input type="checkbox" name="like1[write]" lay-skin="primary" title="选项" >
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <i class="layui-anim layui-icon"></i>
+                                        <span>选项</span>
+                                      </div>
+
+
+                                      <input type="checkbox" name="like1[read]" lay-skin="primary" title="阅读">
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                            <i class="layui-anim layui-icon"></i>
+                                            <span>阅读</span>
+                                       </div> 
+                                  </div>
+                                  <blockquote class="layui-elem-quote train-desc layui-word-aux">
+                                    <p>正确答案: A </p> 
+                                    <p>解析: 这里全是试题的解析</p>
+                                  </blockquote>
+                             </fieldset>
+
+
+                             <fieldset class="layui-elem-field exam-train"> 
+                                  <div class="layui-field-box train-title">
+                                    <span>2、</span>题目内容
+                                  </div>
+                                  <div class="layui-field-box train-options layui-input-block">  
+                                     
+                                      <input type="checkbox" name="like1[write]" lay-skin="primary" title="选项" >
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <i class="layui-anim layui-icon"></i>
+                                        <span>选项</span>
+                                      </div>
+
+
+                                      <input type="checkbox" name="like1[read]" lay-skin="primary" title="阅读">
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                            <i class="layui-anim layui-icon"></i>
+                                            <span>阅读</span>
+                                       </div> 
+                                  </div>
+                                  <blockquote class="layui-elem-quote train-desc layui-word-aux">
+                                    <p>正确答案: A </p> 
+                                    <p>解析: 这里全是试题的解析</p>
+                                  </blockquote>
+                             </fieldset>
+
+
+                             <fieldset class="layui-elem-field exam-train"> 
+                                  <div class="layui-field-box train-title">
+                                    <span>2、</span>题目内容
+                                  </div>
+                                  <div class="layui-field-box train-options layui-input-block">  
+                                     
+                                      <input type="checkbox" name="like1[write]" lay-skin="primary" title="选项" >
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <i class="layui-anim layui-icon"></i>
+                                        <span>选项</span>
+                                      </div>
+
+
+                                      <input type="checkbox" name="like1[read]" lay-skin="primary" title="阅读">
+                                      <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                            <i class="layui-anim layui-icon"></i>
+                                            <span>阅读</span>
+                                       </div> 
+                                  </div>
+                                  <blockquote class="layui-elem-quote train-desc layui-word-aux">
+                                    <p>正确答案: A </p> 
+                                    <p>解析: 这里全是试题的解析</p>
+                                  </blockquote>
+                             </fieldset>
 						</div>	 
-                        <div class="layui-flow-more">您已答完所有题目了</div>
                     </div>
                     <!--右边小栏目-->
                     <div class="exam-main-right">
@@ -196,32 +594,10 @@
                                 </tr>
                                 </tbody>
                             </table>
-                        </div>
-                        <style>
-                            .exam-train-list td {
-                                padding: 5px 5px;
-                                text-align: center;
-                            }
-                        </style>
-                       <!-- <div class="layer-list exam-train-list" style="width: 94%; margin: 0 auto;">
-                            <table class="layui-table">
-                                <script>
-                                    var tr = '<tr>';
-                                    for (var i = 1; i <= 100; i++) {
-                                        if (i % 2 === 0) {
-                                            tr += '<td style="color: #fff;background: darkgrey;">' + i + '</td>';
-                                        } else {
-                                            tr += '<td>' + i + '</td>';
-                                        }
-                                        if (i % 10 === 0) {
-                                            tr += '</tr>';
-                                            document.write(tr);
-                                            tr = '<tr>';
-                                        }
-                                    }
-                                </script>
-                            </table>
-                        </div>-->
+                        </div> 
+                        <div class="layer-list exam-train-list" style="width: 94%; margin: 0 auto;">
+                            <table class="layui-table train-table-pointer" id="train-table-pointer">  </table>
+                        </div> 
                         <div class="layui-form-item">
                             <div class="layui-input-block" style="margin: 5px;">
                                 <a href="javascript:;" style="background-color: #5FB878;width: 100%;"
@@ -235,21 +611,52 @@
             </div>
         </form>
     </div>
-</div>
+</div>  
+<!-- js lib -->
+<script src="./js/jquery-3.2.1.min.js" type="text/javascript"></script>  
+<!-- train pointer  -->
+<script>
+    var tr = '',td = '';
+    for (var i = 1; i <= 100; i++) {
+        td += '<td>' + i + '</td>';
+        if (i % 10 === 0) {
+           tr +='<tr>'+ td +'</tr>'; 
+           td = '';
+        }
+    } 
+    document.getElementById('train-table-pointer').innerHTML = tr;
+</script>　
 
-<script src="./js/jquery-3.2.1.min.js" type="text/javascript"></script>
+ 
 <script type="text/javascript">
+
+    var isSubmit = false; // 默认试卷未提交
+    /** listener submit event **/
     layui.use('form', function () {
         var form = layui.form();
-        //监听提交
         form.on('submit(formDemo)', function (data) {
-            layer.msg(JSON.stringify(data.field));
+            var params = (JSON.stringify(data.field));
+            layer.confirm('你还有0道题未完成，确认提交？', {
+              　 skin: 'layui-layer-molv' //样式类名
+                ,closeBtn: 1
+                ,btn: ['提交', '取消']
+            }, function() {
+             　　var index = layer.load('正在提交您的答卷,请稍后...');
+                 $.post('http://127.0.0.1/test.php',params,function(data){
+                       layer.close(index);
+                       layer.msg('考试完成，即将返回到主页~',function(){
+                         location.href="index.html";
+                       });  
+                       isSubmit = true; // 已提交
+                 }); 
+            });　　
             return false;
         });
     });
 
+   /* timer*/
     $(function () {
-        countDown("2017/4/24 23:59:59", "#colockbox .day", "#colockbox .hour", "#colockbox .minute", "#colockbox .second");
+        countDown("2017/4/25 17:30:00", "#colockbox .day", "#colockbox .hour", "#colockbox .minute", "#colockbox .second");
     });
 
     function countDown(time, day_elem, hour_elem, minute_elem, second_elem) {
@@ -268,10 +675,50 @@
                 $(second_elem).text(second < 10 ? "0" + second : second);// 计算秒
             } else {
                 /* 时间到提交试卷 */
+                if (!isSubmit){
+                    exam_form.submit();
+                }
                 clearInterval(timer);
             }
         }, 1000);
     }
+
+    /* 回到顶部 */
+    function SuCaiJiaYuan(){
+        this.init();
+    }
+    SuCaiJiaYuan.prototype={
+        constructor:SuCaiJiaYuan,
+        init:function(){        
+            this._initBackTop();
+        },  
+        _initBackTop:function(){
+            var $backTop = this.$backTop = $(
+                            '<div class="cbbfixed">'+ 
+                                '<a class="gotop cbbtn" title="返回顶部">'+
+                                    '<span class="up-icon"></span>'+
+                                '</a>'+
+                            '</div>');
+            $('body').append($backTop);
+            
+            $backTop.click(function(){
+                $("html,body").animate({
+                    scrollTop:0
+                },120);
+            });
+            var timmer=null;
+            $(window).bind("scroll",function(){
+                var d=$(document).scrollTop(), e = $(window).height();
+                0 < d ? $backTop.css("bottom","10px"):$backTop.css("bottom","-90px");
+                clearTimeout(timmer);
+                timmer = setTimeout(function(){
+                clearTimeout(timmer)
+                },100);
+            });
+        }
+        
+    }
+    var SuCaiJiaYuan = new SuCaiJiaYuan();
 </script>
 </body>
 </html>

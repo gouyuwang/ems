@@ -124,3 +124,35 @@ input:-webkit-autofill {
     background-color: #5FB878;
     color: #fff;
 }
+
+/* 回到顶部按钮 */
+.cbbfixed{
+    position: fixed;
+    right: 20px;
+    transition: bottom ease .3s;
+    bottom: -85px;
+    z-index: 3;
+    cursor: pointer;
+} 
+ 
+.cbbfixed .gotop {
+    transition: background-color ease .3s;
+    margin-top: 1px;
+}
+
+.cbbfixed .cbbtn { 
+    width: 40px;
+    height: 40px;
+    display: block;
+    background-color: #ccc;
+}
+.cbbfixed .cbbtn:hover{
+   background-color: #5FB878;
+}
+.cbbfixed .gotop .up-icon {
+    float: left;
+    margin: 14px 0 0 9px;
+    width: 23px;
+    height: 12px;
+    background: url(../images/totop.png);
+}
